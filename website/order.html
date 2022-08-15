@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sern Snacks</title>
+    <link rel="stylesheet" href="css.css">
+    
+</head>
+<body>
+    <nav>
+        <div>
+            <ul>
+                <li><img src="images/sern_logo.png" alt="logo" class="sern"></li>
+                <li><a href="home.html" >Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html" class="select">Order</a></li>
+                <li><a href="about site.html">About Site</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Order</h1>
+    
+    <!--The order form-->
+    <form action="order.php" method="post">
+
+      <!--The food quantity selector-->
+        <table align="center">
+          <tr>
+            <th><u>Foods and Beverages</u></th>
+            <th><u>Price</u></th>
+            <th><u>Quantity</u></th>  
+          </tr>
+
+          <tr>
+            <td><label for="nachos">Cheesy Nachos</label></td>
+            <td><div class="price">RM 10.00</div></td>
+            <td><input name="First_Snack" type="number" class="quantity" value="0"> </td>
+          </tr>
+
+          <tr>
+            <td><label for="fries">Fries</label></td>
+            <td><div class="price">RM 5.00</div></td>
+            <td><input name="Second_Snack" type="number" class="quantity" value="0"></td>
+          </tr>
+
+          <tr>
+            <td><label for="nuggets">Chicken Nuggets</label> </td>
+            <td><div class="price">RM 5.00</div></td>
+            <td><input name="Third_Snack" type="number" class="quantity" value="0"></td>
+          </tr>
+
+          <tr>
+            <td><label for="cake">Chocolate Lava Cake</label></td>
+            <td><div class="price">RM 6.90</div></td>
+            <td><input name="First_Desert" type="number" class="quantity" value="0"></td>
+          </tr>
+
+          <tr>
+            <td><label for="pudding">Mango Pudding</label></td>
+            <td><div class="price">RM 5.00</div></td>
+            <td><input name="Second_Desert" type="number" class="quantity" value="0"></td>
+          </tr>
+
+          <tr>
+            <td><label for="ice-cream">Vanilla Ice-Cream</label></td>
+            <td><div class="price">RM 4.00</div></td>
+            <td><input name="Third_Desert" type="number" class="quantity" value="0"></td>
+          </tr>
+
+          <tr>
+            <td><label for="milkshake">Chocolate Milkshake</label></td>
+            <td><div class="price">RM 4.50</div></td>
+            <td><input name="First_Beverage" type="number" class="quantity" value="0"></td>
+          </tr>
+
+          <tr>
+            <td><label for="lemon-tea">Ice-Lemon Tea</label></td>
+            <td><div class="price">RM 3.90</div></td>
+            <td><input name="Second_Beverage" type="number" class="quantity" value="0"></td>
+          </tr>
+
+          <tr>
+            <td><label for="coffee">Black Coffee</label></td>
+            <td><div class="price">RM 5.90</div></td>
+            <td><input name="Third_Beverage" type="number" class="quantity" value="0"></td>
+          </tr>
+        </table>
+
+        <br>
+        <!--The total amount needed to pay-->
+        <div style="font-size: 30px;">
+            Total: <span id="total">RM 0.00</span>
+        </div>
+        <br>
+
+
+        <h1>Payment</h1>
+        <!--Information that users have to type for their food to be delivered-->
+        <table align="center" >
+          <tr>
+            <td><label for="name">Name:</label></td>
+            <td><input name="Person_name" type="text" id="name" required></td>
+          </tr>
+
+          <tr>
+            <td><label for="credit-card">Credit Card (without '-'):</label></td>
+            <td><input name="Credit_card" type="text" id="credit" pattern="[0-9]{15,16}" maxlength="16" title="15-16 digits only" required> </td>
+          </tr>
+
+          <tr>
+            <td><label for="cvv">CVV:</label></td>
+            <td><input name="Cvv" type="text" id="cvv" pattern="[0-9]{3}" size="3" maxlength="3" title="3 digits only" required></td>
+          </tr>
+
+          <tr>
+            <td><label for="expiration-date">Expiration Date:</label></td>
+            <td><input name="Expiration_date" type="text" id="exp" pattern="[0-9]{2}" size="2" maxlength="2" required>/<input name="Expiration_date2" type="text" id="exp2" pattern="[0-9]{2}" size="2" maxlength="2" required> </td>
+          </tr>
+
+          <tr>
+            <td><label for="address">Address:</label></td>
+            <td><textarea name="Address" type="text" id="address" cols="21" rows="6" required></textarea></td>
+          </tr>
+
+          <tr>
+            <td><label for="phone-number">Phone Number (without '-'):</label></td>
+            <td><input name="Phone_number" type="text" id="phone" pattern="[0-9]{11,15}" maxlength="15" title="11-15 digits only"required></td>
+          </tr>
+
+          <tr>
+            <td><label for="special-requests">Special Requests (Optional):</label></td>
+            <td><textarea name="Desc" cols="21" rows="6"> </textarea></td>
+          </tr>
+        </table>
+        
+        <!--The button that triggers a javascript function once pressed-->
+        <input type="submit" value="Pay" class="button" onclick="afterPurchase()">
+      </form>
+    
+    </form>
+
+    <!--The javacript at the end of the document to allow these elements to finish loading-->
+    <script src="total.js"></script>
+</body>
+</html>
